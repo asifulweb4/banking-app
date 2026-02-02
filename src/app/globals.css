@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Jodi kono custom variable thake segulo er niche thakbe */
+:root {
+    --background: #ffffff;
+    --foreground: #111827;
+}
+
+body {
+    background-color: #f8fafc;
+    color: var(--foreground);
+}
