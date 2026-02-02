@@ -7,12 +7,12 @@ export default function FinanceChart() {
 
     // Data calculation
     const income = transactions
-        .filter(t => t.type === 'deposit')
-        .reduce((acc, t) => acc + t.amount, 0);
+        .filter((t: { type: string; }) => t.type === 'deposit')
+        .reduce((acc: any, t: { amount: any; }) => acc + t.amount, 0);
 
     const expense = transactions
-        .filter(t => t.type === 'withdraw')
-        .reduce((acc, t) => acc + t.amount, 0);
+        .filter((t: { type: string; }) => t.type === 'withdraw')
+        .reduce((acc: any, t: { amount: any; }) => acc + t.amount, 0);
 
     const data = [
         { name: 'Income', value: income || 0 },
