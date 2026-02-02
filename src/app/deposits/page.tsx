@@ -22,7 +22,7 @@ export default function MasterTransactionPage() {
         if (!title || !amount) return;
         addTransaction({
             title,
-            amount: type === 'withdraw' ? -Math.abs(Number(amount)) : Math.abs(Number(amount)), // টাইপ অনুযায়ী মাইনাস বা প্লাস নিশ্চিত করা হয়েছে
+            amount: type === 'withdraw' ? -Math.abs(Number(amount)) : Math.abs(Number(amount)),
             type: type,
             date: new Date().toISOString(),
         });
@@ -59,7 +59,7 @@ export default function MasterTransactionPage() {
                 <p className="text-gray-500 font-medium">Add or manage your deposits and withdrawals from one place.</p>
             </div>
 
-            <div className="bg-white p-8 rounded-4xl border border-gray-100 shadow-xl">
+            <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
                     <div className="flex items-center gap-2 text-indigo-600 font-bold uppercase tracking-wider text-sm">
                         <PlusCircle size={18} />
@@ -121,7 +121,7 @@ export default function MasterTransactionPage() {
                     Recent Transactions
                 </h3>
 
-                <div className="bg-white rounded-4xl border border-gray-100 shadow-sm overflow-hidden">
+                <div className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
                     <table className="w-full text-left">
                         <thead className="bg-gray-50/50 border-b border-gray-100">
                             <tr>
@@ -132,7 +132,7 @@ export default function MasterTransactionPage() {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100">
-                            {transactions.map((t: any) => ( // এখানে 'any' টাইপ যোগ করা হয়েছে এরর ফিক্স করতে
+                            {transactions.map((t: any) => (
                                 <tr key={t.id} className="hover:bg-gray-50/30 transition-colors">
                                     <td className="p-6 font-bold text-gray-800">
                                         {editingId === t.id ? (
