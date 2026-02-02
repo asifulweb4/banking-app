@@ -6,12 +6,12 @@ export default function Summary() {
 
     // Calculation logic
     const totalDeposit = transactions
-        .filter(tx => tx.type === 'deposit')
-        .reduce((acc, tx) => acc + tx.amount, 0);
+        .filter((tx: { type: string; }) => tx.type === 'deposit')
+        .reduce((acc: any, tx: { amount: any; }) => acc + tx.amount, 0);
 
     const totalWithdraw = transactions
-        .filter(tx => tx.type === 'withdraw')
-        .reduce((acc, tx) => acc + tx.amount, 0);
+        .filter((tx: { type: string; }) => tx.type === 'withdraw')
+        .reduce((acc: any, tx: { amount: any; }) => acc + tx.amount, 0);
 
     const balance = totalDeposit - totalWithdraw;
 
